@@ -14,8 +14,6 @@ let actions = {
 
 	fetchForks({commit},{ perPage=10}){
 
-
-
 		let url = process.env.NODE_ENV === 'production'  ?  'github/forks?' : 'http://localhost:3000/github/forks?'
 
 		url += 'page=' + store.state.forks.page.toString() 

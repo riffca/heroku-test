@@ -76,9 +76,11 @@ export default {
 
 	watch:{
 		owner(){
+			this.$store.state.forks.page = 1
 			this.$store.dispatch('forks/fetchForks',{})
 		},
 		repoName(){
+			this.$store.state.forks.page = 1
 			this.$store.dispatch('forks/fetchForks',{})
 
 		}
