@@ -14,7 +14,9 @@ let actions = {
 
 	fetchForks({commit},{ perPage=10}){
 
-		let url = 'http://localhost:3000/github/forks?'
+
+
+		let url = process.env.NODE_ENV === 'production'  ?  'github/forks?' : 'http://localhost:3000/github/forks?'
 
 		url += 'page=' + store.state.forks.page.toString() 
 		url += '&per_page=' + perPage.toString() 
@@ -27,7 +29,7 @@ let actions = {
 			headers: {
 				"Access-Control-Allow-Origin": "*"
 			},
-			crossdomain: true,
+			crossdomain: process.env.NODE_ENV === 'production'  ? false : true,
 			url:url}).then(res=>{
 
 
