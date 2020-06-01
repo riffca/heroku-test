@@ -33,16 +33,19 @@
 			
 		</div>
 
+		<transition name="modal">
 
-		<div class="table-modal" v-if="current">
-			<div class='wrap'>
-				<div class="title"><h4>Add to favourites</h4></div>
-				<div class= "close" @click="current=''">x</div>
-				<div class="currentName">{{ current.Owner }} / {{current.Name}}</div>
-				<div class="button" @click="addToFavourites">Save</div>
-				<div class="button" @click="removeFromFavourites">Remove</div>
+			<div class="table-modal" v-if="current">
+				<div class='wrap'>
+					<div class="title"><h4>Add to favourites</h4></div>
+					<div class= "close" @click="current=''">x</div>
+					<div class="currentName">{{ current.Owner }} / {{current.Name}}</div>
+					<div class="button" @click="addToFavourites">Save</div>
+					<div class="button" @click="removeFromFavourites">Remove</div>
+				</div>
 			</div>
-		</div>
+
+		</transition>	
 
 	</div>
 
@@ -157,6 +160,7 @@ tr {
 	left: 0;
 	right: 0;
 	bottom: 0;
+	transition: all 0.3s ease;
 
 	.wrap {
 		height: 40vw;
