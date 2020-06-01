@@ -29,8 +29,15 @@ let actions = {
 			},
 			crossdomain: true,
 			url:url}).then(res=>{
+
+
+
 				commit('setForks',res.data)
-				console.log('getting forks',res.data.length ? res.data.length : res.data)
+
+				if(!res.data.name === 'Error') {
+					alert('Forks 403 error')
+					console.log('getting forks',res.data.length ? res.data.length : res.data)
+				}
 			}).catch(e=>{
 
 				console.log(e)

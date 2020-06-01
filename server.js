@@ -11,7 +11,7 @@ let express = require('express')
 let app = express();
 
 let clientPath = (location)=>{
-	return path.resolve(__dirname, 'client', 'build')
+	return path.resolve(__dirname, 'client', 'dist')
 }
 
 app.use(cors())
