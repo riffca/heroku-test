@@ -13,7 +13,7 @@ let app = express();
 let clientPath = (location)=>{
 	return path.resolve(__dirname, 'client', 'dist')
 }
-
+app.use(require('connect-history-api-fallback')()) 
 app.use(cors())
 app.set('port', process.env.PORT || 3000);
 app.use(logger('dev'));
@@ -85,10 +85,6 @@ app.use('/github/forks',(req,response)=> {
 if (app.get('env') == 'development') {
 	app.locals.pretty = true;
 }
-
-app.get('*', (req, res) => {
-	res.sendFile(clientPath('client/dist/index.html'));
-});
 
 
 http.createServer(app).listen(app.get('port'), function(){
