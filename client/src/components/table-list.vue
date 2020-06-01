@@ -4,7 +4,7 @@
 		<div class="button-panel" v-if="mappedForks.length">
 			<div class="button" @click="previousPage" v-if="$store.state.forks.page !== 1">previous</div>
 			<div class="button" @click="nextPage">next</div>
-			<span>page</span>
+			<span>page {{$store.state.forks.page}}</span>
 		</div>
 
 		<div class="wrapper">

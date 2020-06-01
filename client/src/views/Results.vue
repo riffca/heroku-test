@@ -8,7 +8,7 @@
 import tableList from '../components/table-list' 
 // @ is an alias to /src
 export default {
-	name: 'Home',
+	name: 'Results',
 	components: {
 		tableList
 	},
