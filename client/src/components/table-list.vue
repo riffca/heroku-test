@@ -23,7 +23,7 @@
 							v-for="(item,key,index) in rowItem" 
 							:key="index">
 							<span v-if="item.toString().indexOf('http') !== -1"> 
-								<a :href="'https://github.com/search?q='+rowItem.Name+'&ref=simplesearch'" target="_blank">go to...</a>
+								<a @click.stop :href="item" target="_blank">go to...</a>
 							</span>
 							<span v-else>{{ item }}</span>
 						</td>	
