@@ -31,8 +31,7 @@ router.beforeEach((to, from, next) => {
 
 	let { page, repository, owner } =  to.query
 
-	if(page && repository && from){
-
+	if(to.name === 'Search' && page && repository && from){
 		if(!owner) {
 			alert('warn! Provide &owner= query')
 		} else {
