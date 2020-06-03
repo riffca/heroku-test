@@ -60,7 +60,7 @@ export default {
 				return this.$store.state.form.owner
 			},
 			set (value) {
-				this.$store.commit('inputOwner', value)
+				this.$store.commit('form/inputOwner', value)
 			}
 		},	 
 		repoName: {
@@ -68,7 +68,7 @@ export default {
 				return this.$store.state.form.repoName
 			},
 			set (value) {
-				this.$store.commit('inputRepoName', value)
+				this.$store.commit('form/inputRepoName', value)
 			}
 		}
 	},
