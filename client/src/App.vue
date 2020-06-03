@@ -5,7 +5,6 @@
 
 		<div class="form-wrapper">
 
-			<button @click="goToRepo">Search repo</button>
 			<div>
 				<label for="owner">Enter owner</label> 
 				<input id='owner' v-model="owner" type="text">
@@ -15,7 +14,7 @@
 				<input id='repoName' v-model="repoName" type="text">
 			</div>
 
-			<button v-if="$route.path.indexOf('result')===-1" @click="$router.push('/results')">get results</button>
+			<button v-if="$route.path.indexOf('search')===-1" @click="$router.push('/search')">get results</button>
 
 		</div>
 
@@ -53,11 +52,6 @@ export default {
 			});
 
 
-	},
-	methods: {
-		goToRepo(){
-			window.open('https://github.com/search?q='+this.repoName+'&ref=simplesearch')
-		}
 	},
 
 	computed: {

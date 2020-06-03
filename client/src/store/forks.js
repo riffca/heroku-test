@@ -55,6 +55,10 @@ let mutations = {
 	},
 	incPage(state,val){
 		state.page += val
+	},	
+
+	setPage(state,val){
+		state.page = val
 	}	
 }
 
